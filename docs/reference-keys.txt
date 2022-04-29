@@ -1,1 +1,3 @@
 sem-in-stata
+efa
+cfa
