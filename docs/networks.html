@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Networks | Text-Analysis-in-Python</title>
+  <meta name="description" content="Chapter 3 Networks | Text-Analysis-in-Python" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Networks | Text-Analysis-in-Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Networks | Text-Analysis-in-Python" />
+  
+  
+  
+
+<meta name="author" content="Zoe Li" />
+
+
+<meta name="date" content="2022-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="natual-language-processingnlp.html"/>
+<link rel="next" href="parallel-processing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network-Text-Analysis-in-Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Basic Python Knowledge</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#shortcuts-in-jupyter-notebook"><i class="fa fa-check"></i><b>1.1</b> Shortcuts in Jupyter Notebook</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#make-one-python-script-run-another"><i class="fa fa-check"></i><b>1.2</b> Make one Python script run another</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#concepts"><i class="fa fa-check"></i><b>1.3</b> Concepts</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#install-packages"><i class="fa fa-check"></i><b>1.3.1</b> install packages</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#uninstall-packages"><i class="fa fa-check"></i><b>1.3.2</b> uninstall packages</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#upgrade-packages-the-older-version-is-automatically-replaced-when-you-install-a-newer-version"><i class="fa fa-check"></i><b>1.3.3</b> upgrade packages: the older version is automatically replaced when you install a newer version</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#common-errors"><i class="fa fa-check"></i><b>1.3.4</b> Common Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#open-a-file"><i class="fa fa-check"></i><b>1.4</b> Open a file</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#set-a-path"><i class="fa fa-check"></i><b>1.5</b> Set a path</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#other-symbols"><i class="fa fa-check"></i><b>1.7</b> Other symbols</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#symbols-expressions"><i class="fa fa-check"></i><b>1.8.1</b> Symbols &amp; Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#lambda-function"><i class="fa fa-check"></i><b>1.9</b> Lambda Function</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#general-funtions"><i class="fa fa-check"></i><b>1.10</b> General Funtions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html"><i class="fa fa-check"></i><b>2</b> Natual Language Processing(NLP)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#regexregular-expression"><i class="fa fa-check"></i><b>2.1</b> Regex/Regular Expression</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symbols"><i class="fa fa-check"></i><b>2.1.1</b> Symbols</a></li>
+<li class="chapter" data-level="2.1.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symple-aplications"><i class="fa fa-check"></i><b>2.1.2</b> Symple aplications</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#online-scraping"><i class="fa fa-check"></i><b>2.2</b> Online Scraping</a></li>
+<li class="chapter" data-level="2.3" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#descriptive-statistics-of-text-data"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics of Text Data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#word-frequencies"><i class="fa fa-check"></i><b>2.3.1</b> Word Frequencies</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#text-data-cleaning"><i class="fa fa-check"></i><b>2.4</b> Text Data Cleaning</a></li>
+<li class="chapter" data-level="2.5" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#textual-cues-tagging"><i class="fa fa-check"></i><b>2.5</b> Textual Cues Tagging</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#syntax"><i class="fa fa-check"></i><b>2.5.1</b> Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#dependency-relations-in-spacy"><i class="fa fa-check"></i><b>2.6</b> Dependency Relations in Spacy</a></li>
+<li class="chapter" data-level="2.7" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#tag-symbols"><i class="fa fa-check"></i><b>2.7</b> Tag symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>3</b> Networks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="networks.html"><a href="networks.html#concepts-1"><i class="fa fa-check"></i><b>3.1</b> Concepts</a></li>
+<li class="chapter" data-level="3.2" data-path="networks.html"><a href="networks.html#generate-a-network-graph"><i class="fa fa-check"></i><b>3.2</b> Generate a Network Graph</a></li>
+<li class="chapter" data-level="3.3" data-path="networks.html"><a href="networks.html#send-generated-text-dependency-tree-to-networkx"><i class="fa fa-check"></i><b>3.3</b> Send Generated Text Dependency Tree to NetworkX</a></li>
+<li class="chapter" data-level="3.4" data-path="networks.html"><a href="networks.html#algorithms"><i class="fa fa-check"></i><b>3.4</b> Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parallel-processing.html"><a href="parallel-processing.html"><i class="fa fa-check"></i><b>4</b> Parallel Processing</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="Network-Text-Analysis-in-Python">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Text-Analysis-in-Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="networks" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Networks<a href="networks.html#networks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="concepts-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Concepts<a href="networks.html#concepts-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Reference: <a href="https://networkx.org/" class="uri">https://networkx.org/</a></p>
+</div>
+<div id="generate-a-network-graph" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Generate a Network Graph<a href="networks.html#generate-a-network-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>import networkx as nx
+G = nx.Graph()
+G.add_nodes_from([2, 3])
+G.add_nodes_from([
+(4, {“color”: “red”}),
+(5, {“color”: “green”})])</p>
+<p>import matplotlib.pyplot as plt
+G = nx.dodecahedral_graph()
+shells = [[2, 3, 4, 5, 6], [8, 1, 0, 19, 18, 17, 16, 15, 14, 7], [9, 10, 11, 12, 13]]
+nx.draw_shell(G, nlist=shells, **options)</p>
+</div>
+<div id="send-generated-text-dependency-tree-to-networkx" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Send Generated Text Dependency Tree to NetworkX<a href="networks.html#send-generated-text-dependency-tree-to-networkx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>from nltk import Tree</p>
+<p>def to_nltk_tree(node):
+if node.n_lefts + node.n_rights &gt; 0:
+return Tree(node.orth_, [to_nltk_tree(child) for child in node.children])
+else:
+return node.orth_</p>
+<p>[to_nltk_tree(sent.root).pretty_print() for sent in doc.sents]</p>
+<p>import networkx as nx</p>
+<p>edges = []
+for token in doc:
+for child in token.children:
+edges.append((‘{0}’.format(token.lower_),
+‘{0}’.format(child.lower_)))
+graph = nx.Graph(edges)</p>
+</div>
+<div id="algorithms" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Algorithms<a href="networks.html#algorithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Check the Distance between Pairs of Nodes</p>
+<p>entity1 = ‘looking’.lower()
+entity2 = ‘billion’
+print(nx.shortest_path_length(graph, source=entity1, target=entity2))</p>
+<p>Check the Path
+print(nx.shortest_path(graph, source=entity1, target=entity2))</p>
+<p>Use Dijkstra Algorithm
+nx.dijkstra_path_length(graph, ‘looking’, ‘billion’, weight=‘weight’)</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="natual-language-processingnlp.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parallel-processing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/blob/master/index.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

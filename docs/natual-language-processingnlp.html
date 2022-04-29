@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Natual Language Processing(NLP) | Text-Analysis-in-Python</title>
+  <meta name="description" content="Chapter 2 Natual Language Processing(NLP) | Text-Analysis-in-Python" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Natual Language Processing(NLP) | Text-Analysis-in-Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Natual Language Processing(NLP) | Text-Analysis-in-Python" />
+  
+  
+  
+
+<meta name="author" content="Zoe Li" />
+
+
+<meta name="date" content="2022-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="networks.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network-Text-Analysis-in-Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Basic Python Knowledge</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#shortcuts-in-jupyter-notebook"><i class="fa fa-check"></i><b>1.1</b> Shortcuts in Jupyter Notebook</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#make-one-python-script-run-another"><i class="fa fa-check"></i><b>1.2</b> Make one Python script run another</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#concepts"><i class="fa fa-check"></i><b>1.3</b> Concepts</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#install-packages"><i class="fa fa-check"></i><b>1.3.1</b> install packages</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#uninstall-packages"><i class="fa fa-check"></i><b>1.3.2</b> uninstall packages</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#upgrade-packages-the-older-version-is-automatically-replaced-when-you-install-a-newer-version"><i class="fa fa-check"></i><b>1.3.3</b> upgrade packages: the older version is automatically replaced when you install a newer version</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#common-errors"><i class="fa fa-check"></i><b>1.3.4</b> Common Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#open-a-file"><i class="fa fa-check"></i><b>1.4</b> Open a file</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#set-a-path"><i class="fa fa-check"></i><b>1.5</b> Set a path</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#other-symbols"><i class="fa fa-check"></i><b>1.7</b> Other symbols</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#symbols-expressions"><i class="fa fa-check"></i><b>1.8.1</b> Symbols &amp; Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#lambda-function"><i class="fa fa-check"></i><b>1.9</b> Lambda Function</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#general-funtions"><i class="fa fa-check"></i><b>1.10</b> General Funtions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html"><i class="fa fa-check"></i><b>2</b> Natual Language Processing(NLP)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#regexregular-expression"><i class="fa fa-check"></i><b>2.1</b> Regex/Regular Expression</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symbols"><i class="fa fa-check"></i><b>2.1.1</b> Symbols</a></li>
+<li class="chapter" data-level="2.1.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symple-aplications"><i class="fa fa-check"></i><b>2.1.2</b> Symple aplications</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#online-scraping"><i class="fa fa-check"></i><b>2.2</b> Online Scraping</a></li>
+<li class="chapter" data-level="2.3" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#descriptive-statistics-of-text-data"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics of Text Data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#word-frequencies"><i class="fa fa-check"></i><b>2.3.1</b> Word Frequencies</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#text-data-cleaning"><i class="fa fa-check"></i><b>2.4</b> Text Data Cleaning</a></li>
+<li class="chapter" data-level="2.5" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#textual-cues-tagging"><i class="fa fa-check"></i><b>2.5</b> Textual Cues Tagging</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#syntax"><i class="fa fa-check"></i><b>2.5.1</b> Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#dependency-relations-in-spacy"><i class="fa fa-check"></i><b>2.6</b> Dependency Relations in Spacy</a></li>
+<li class="chapter" data-level="2.7" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#tag-symbols"><i class="fa fa-check"></i><b>2.7</b> Tag symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>3</b> Networks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="networks.html"><a href="networks.html#concepts-1"><i class="fa fa-check"></i><b>3.1</b> Concepts</a></li>
+<li class="chapter" data-level="3.2" data-path="networks.html"><a href="networks.html#generate-a-network-graph"><i class="fa fa-check"></i><b>3.2</b> Generate a Network Graph</a></li>
+<li class="chapter" data-level="3.3" data-path="networks.html"><a href="networks.html#send-generated-text-dependency-tree-to-networkx"><i class="fa fa-check"></i><b>3.3</b> Send Generated Text Dependency Tree to NetworkX</a></li>
+<li class="chapter" data-level="3.4" data-path="networks.html"><a href="networks.html#algorithms"><i class="fa fa-check"></i><b>3.4</b> Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parallel-processing.html"><a href="parallel-processing.html"><i class="fa fa-check"></i><b>4</b> Parallel Processing</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="Network-Text-Analysis-in-Python">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Text-Analysis-in-Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="natual-language-processingnlp" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Natual Language Processing(NLP)<a href="natual-language-processingnlp.html#natual-language-processingnlp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="regexregular-expression" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Regex/Regular Expression<a href="natual-language-processingnlp.html#regexregular-expression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="symbols" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Symbols<a href="natual-language-processingnlp.html#symbols" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>[] A set of characters Signals a special sequence (can also be used to
+escape special characters) . Any character (except newline character) ^
+Starts with $ Ends with * Zero or more occurrences + One or more
+occurrences
+? an occurrence of atom, or the null string.
+{} Exactly the specified number of occurrences
+?= look ahead
+| Either or
+() Capture and group Example of (): Only pull out the part in ()
+re.findall(r’
+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ’,
+dateStr) [‘Oct’]</p>
+<p>A special sequence is a followed by one of the characters in the list
+below, and has a special meaning: Character Description Returns a
+match if the specified characters are at the beginning of the string eturns a match where the specified characters are at the beginning or
+at the end of a word (the “r” in the beginning is making sure that the
+string is being treated as a “raw string”) Returns a match where the
+specified characters are present, but NOT at the beginning (or at the
+end) of a word (the “r” in the beginning is making sure that the string
+is being treated as a “raw string”) eturns a match where the string
+contains digits (numbers from 0-9) Returns a match where the string
+DOES NOT contain digits Returns a match where the string contains a
+white space character Returns a match where the string DOES NOT
+contain a white space character Returns a match where the string
+contains any word characters (characters from a to Z, digits from 0-9,
+and the underscore _ character) Returns a match where the string
+DOES NOT contain any word characters Returns a match if the specified
+characters are at the end of the string</p>
+<p>Sets A set is a set of characters inside a pair of square brackets []
+with a special meaning.</p>
+<p>[arn] Returns a match where one of the specified characters (a, r, or n)
+are present e.g. [ao] means any character from ‘a’ and ‘o’ (or both)
+hence only ‘bat’ and ‘bot’ would be extracted import re string = ‘bat,
+lat, mat, bet, let, met, bit, lit, mit, bot, lot, mot’ result =
+re.findall(‘b[ao]t’, string) print(result)</p>
+<p>[‘bat’, ‘bot’]</p>
+<p>[/-] / or - [a-n] Returns a match for any lower case character,
+alphabetically between a and n [^arn] Returns a match for any character
+EXCEPT a, r, and n When ^ is used outside square brackets, it denotes
+that the expression inside the brackets should not be extracted from the
+string [0123] Returns a match where any of the specified digits (0, 1,
+2, or 3) are present [0-9] Returns a match for any digit between 0 and 9
+[0-5][0-9] Returns a match for any two-digit numbers from 00 and 59
+[a-zA-Z] Returns a match for any character alphabetically between a and
+z, lower case OR upper case [+] In sets, +, *, ., |, (), $,{} has no
+special meaning, so [+] means: return a match for any + character in the
+string</p>
+<p>re.findall(‘[cd]?[cde]?’, ‘ccc dd ee’) [‘cc’, ‘c’, ’‘, ’dd’, ’‘, ’e’,
+‘e’, ’’] This regex pattern looks complicated: ‘[cd]?[cde]?’. But is it
+really? Let’s break it down step-by-step: • The first part of the regex
+[cd]? defines a character class [cd] which reads as “match either c or
+d”. The question mark quantifier indicates that you want to match either
+one or zero occurrences of this pattern. • The second part of the regex
+[cde]? defines a character class [cde] which reads as “match either c,
+d, or e”. Again, the question mark indicates the zero-or-one matching
+requirement.</p>
+<p>re.search returns match or not. re.find can extract the matched
+patterns. .str.contains() can only be used on a Pandas series, not after
+extracting an individual string.</p>
+<p>re.split #split by something in the ()</p>
+<p>isalpha() method returns True if all the characters are alphabet letters (a-z)</p>
+</div>
+<div id="symple-aplications" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Symple aplications<a href="natual-language-processingnlp.html#symple-aplications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>import re</p>
+<p>txt = “The rain in Spain” x = re.search(“^The.*Spain$”, txt)</p>
+<p>Print a list of all matches: txt = “The rain in Spain” x =
+re.findall(“ai”, txt) print(x)</p>
+<p>Return an empty list if no match was found:</p>
+<p>txt = “The rain in Spain” x = re.findall(“Portugal”, txt) print(x)</p>
+<p>Search for the first white-space character in the string:</p>
+<p>txt = “The rain in Spain” x = re.search(“”, txt)</p>
+<p>print(“The first white-space character is located in position:”,
+x.start()) Make a search that returns no match:</p>
+<p>txt = “The rain in Spain” x = re.search(“Portugal”, txt) print(x)</p>
+<p>Split at each white-space character: txt = “The rain in Spain” x =
+re.split(“”, txt) print(x)</p>
+<p>Split the string only at the first occurrence: txt = “The rain in Spain”
+x = re.split(“”, txt, 1) print(x)</p>
+<p>Replace every white-space character with the number 9: import re</p>
+<p>txt = “The rain in Spain” x = re.sub(“”, “9”, txt) print(x)</p>
+<p>Replace the first 2 occurrences: txt = “The rain in Spain” x =
+re.sub(“”, “9”, txt, 2) print(x)</p>
+<p>Do a search that will return a Match Object: txt = “The rain in Spain” x
+= re.search(“ai”, txt) print(x) #this will print an object</p>
+<p>The Match object has properties and methods used to retrieve information
+about the search, and the result: .span() returns a tuple containing the
+start-, and end positions of the match. .string returns the string
+passed into the function .group() returns the part of the string where
+there was a match</p>
+<p>Examples: Print the position (start- and end-position) of the first
+match occurrence. The regular expression looks for any words that starts
+with an upper case “S”:</p>
+<p>import re txt = “The rain in Spain” x = re.search(r”+“, txt)
+print(x.span())</p>
+<p>Print the string passed into the function: txt = “The rain in Spain” x =
+re.search(r”+“, txt) print(x.string)</p>
+<p>Print the part of the string where there was a match. The regular
+expression looks for any words that starts with an upper case “S”:
+import re</p>
+<p>txt = “The rain in Spain” x = re.search(r”+“, txt) print(x.group())</p>
+<p>in function
+ss = ‘I like it. Let us proceed the order now. Will you help me with that?’
+if cues in ss:
+print(‘YesYes!’)
+else:
+print (‘Ohnono’)</p>
+</div>
+</div>
+<div id="online-scraping" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Online Scraping<a href="natual-language-processingnlp.html#online-scraping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>import time
+from selenium import webdriver
+import re
+from selenium.common.exceptions import NoSuchElementException
+import json
+from random import randint
+import csv</p>
+<p>data = []
+options = webdriver.ChromeOptions()
+options.add_argument(‘headless’)</p>
+<p>browser = webdriver.Chrome(r’C:\location\chromedriver.exe’, options=options)</p>
+<p>data = []
+options = webdriver.ChromeOptions()
+options.add_argument(‘headless’)</p>
+<p>browser = webdriver.Chrome(r’C:\location\chromedriver.exe’, options=options)</p>
+</div>
+<div id="descriptive-statistics-of-text-data" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Descriptive Statistics of Text Data<a href="natual-language-processingnlp.html#descriptive-statistics-of-text-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="word-frequencies" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Word Frequencies<a href="natual-language-processingnlp.html#word-frequencies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>import nltk
+words = nltk.tokenize.word_tokenize(str)
+fd = nltk.FreqDist(words)
+def Convert(tup, di):
+di = dict(tup)
+return di</p>
+<p>dictionary = {}
+wordfreq = (Convert(fd.items(), dictionary))</p>
+<p>newwordfreq = dict(sorted(wordfreq.items(), key=lambda item: item[1], reverse=True))</p>
+<p>file = open(“DictFile.txt”,“w”)</p>
+<p>for key, value in newwordfreq.items():</p>
+<pre><code>file.write(&#39; %-*s %s\n&#39; % (20,key, value)) 
+#%-*s and 20 are for setting the space between words and numbers</code></pre>
+<p>file.close()</p>
+</div>
+</div>
+<div id="text-data-cleaning" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Text Data Cleaning<a href="natual-language-processingnlp.html#text-data-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Insert Regex to textual cues
+def clean_keywords_bypattern(df,keywords,pattern_keyword, pattern_type):
+df[keywords] = df[keywords].str.strip().str.lower()
+df[keywords] = df[keywords].str.replace(’*’,“(+)?(++){0,5}?”)
+keywords = list(df.loc[(df[pattern_keyword] == pattern_type),keywords])
+keywords = [(r’[|]?‘+ x + r’[|]?‘) for x in keywords if str(x) != ’nan’]
+return keywords</p>
+<p>Clean contractions in the data
+def clean_contractions(data_source, variable_to_clean):
+CONTRACTION_MAP = {
+“ain’t”: “am not / are not / is not / has not / have not”,
+“aren’t”: “are not / am not”,
+“can’t”: “cannot”,
+“can’t’ve”: “cannot have”,
+“’cause”: “because”,
+“could’ve”: “could have”,
+“couldn’t”: “could not”,
+“couldn’t’ve”: “could not have”,
+“didn’t”: “did not”,
+“doesn’t”: “does not”,
+“don’t”: “do not”,
+“hadn’t”: “had not”,
+“hadn’t’ve”: “had not have”,
+“hasn’t”: “has not”,
+“haven’t”: “have not”,
+“he’d”: “he had / he would”,
+“he’d’ve”: “he would have”,
+“he’ll”: “he he will”,
+“he’ll’ve”: “he shall have / he will have”,
+“he’s”: “he has / he is”,
+“how’d”: “how did”,
+“how’d’y”: “how do you”,
+“how’ll”: “how will”,
+“how’s”: “how has / how is / how does”,
+“I’d”: “I had / I would”,
+“I’d’ve”: “I would have”,
+“I’ll”: “I shall / I will”,
+“I’ll’ve”: “I shall have / I will have”,
+“I’m”: “I am”,
+“I’ve”: “I have”,
+“isn’t”: “is not”,
+“it’d”: “it had / it would”,
+“it’d’ve”: “it would have”,
+“it’ll”: “it shall / it will”,
+“it’ll’ve”: “it shall have / it will have”,
+“it’s”: “it has / it is”,
+“let’s”: “let us”,
+“ma’am”: “madam”,
+“mayn’t”: “may not”,
+“might’ve”: “might have”,
+“mightn’t”: “might not”,
+“mightn’t’ve”: “might not have”,
+“must’ve”: “must have”,
+“mustn’t”: “must not”,
+“mustn’t’ve”: “must not have”,
+“needn’t”: “need not”,
+“needn’t’ve”: “need not have”,
+“o’clock”: “of the clock”,
+“oughtn’t”: “ought not”,
+“oughtn’t’ve”: “ought not have”,
+“shan’t”: “shall not”,
+“sha’n’t”: “shall not”,
+“shan’t’ve”: “shall not have”,
+“she’d”: “she had / she would”,
+“she’d’ve”: “she would have”,
+“she’ll”: “she shall / she will”,
+“she’ll’ve”: “she shall have / she will have”,
+“she’s”: “she has / she is”,
+“should’ve”: “should have”,
+“shouldn’t”: “should not”,
+“shouldn’t’ve”: “should not have”,
+“so’ve”: “so have”,
+“so’s”: “so as / so is”,
+“that’d”: “that would / that had”,
+“that’d’ve”: “that would have”,
+“that’s”: “that has / that is”,
+“there’d”: “there had / there would”,
+“there’d’ve”: “there would have”,
+“there’s”: “there has / there is”,
+“they’d”: “they had / they would”,
+“they’d’ve”: “they would have”,
+“they’ll”: “they shall / they will”,
+“they’ll’ve”: “they shall have / they will have”,
+“they’re”: “they are”,
+“they’ve”: “they have”,
+“to’ve”: “to have”,
+“wasn’t”: “was not”,
+“we’d”: “we had / we would”,
+“we’d’ve”: “we would have”,
+“we’ll”: “we will”,
+“we’ll’ve”: “we will have”,
+“we’re”: “we are”,
+“we’ve”: “we have”,
+“weren’t”: “were not”,
+“what’ll”: “what shall / what will”,
+“what’ll’ve”: “what shall have / what will have”,
+“what’re”: “what are”,
+“what’s”: “what has / what is”,
+“what’ve”: “what have”,
+“when’s”: “when has / when is”,
+“when’ve”: “when have”,
+“where’d”: “where did”,
+“where’s”: “where has | where is”,
+“where’ve”: “where have”,
+“who’ll”: “who shall / who will”,
+“who’ll’ve”: “who shall have / who will have”,
+“who’s”: “who has / who is”,
+“who’ve”: “who have”,
+“why’s”: “why has / why is”,
+“why’ve”: “why have”,
+“will’ve”: “will have”,
+“won’t”: “will not”,
+“won’t’ve”: “will not have”,
+“would’ve”: “would have”,
+“wouldn’t”: “would not”,
+“wouldn’t’ve”: “would not have”,
+“y’all”: “you all”,
+“y’all’d”: “you all would”,
+“y’all’d’ve”: “you all would have”,
+“y’all’re”: “you all are”,
+“y’all’ve”: “you all have”,
+“you’d”: “you had | you would”,
+“you’d’ve”: “you would have”,
+“you’ll”: “you shall | you will”,
+“you’ll’ve”: “you shall have | you will have”,
+“you’re”: “you are”,
+“you’ve”: “you have”} # contraction definition.</p>
+<pre><code>data_source[variable_to_clean] = data_source[variable_to_clean].apply(lambda x:str(x).replace(&quot;’&quot;,&quot;&#39;&quot;)) # replace the wrong quotation mark by the correct one
+for contraction in CONTRACTION_MAP:
+    data_source[variable_to_clean] = data_source[variable_to_clean].apply(lambda x:str(x).replace(contraction,CONTRACTION_MAP[contraction])) 
+
+return data_source</code></pre>
+<p>Add space for those sentences without space in between.
+dfsource[‘text’] = dfsource[‘text’].apply(lambda x: re.sub(r’([a-z]|]).([A-Z]|[)‘, r’\1. \2’, str(x)))</p>
+<p>Filter text column, extract cues
+text = df[‘variable_name’]
+cues = text.str.extract(r”(1)(.+)“, expand=True).dropna()[1]</p>
+<p>Tokenlize
+dfsource[‘text’] = dfsource.apply(lambda row: sent_tokenize(row[‘text’]), axis=1)</p>
+<p>Autocorrection
+1.By words
+with a text file that defines word frequencies: one-grams.txt</p>
+<p>import functools, math</p>
+<p>class OneGramDist(dict):
+def <strong>init</strong>(self, filename):
+self.gramCount = 0</p>
+<pre><code>  for line in open(filename):
+     (word, count) = line[:-1].split(&#39;\t&#39;)
+     self[word] = int(count)
+     self.gramCount += self[word]</code></pre>
+<p>def <strong>call</strong>(self, key):
+if key in self:
+return float(self[key]) / self.gramCount
+else:
+return 1.0 / (self.gramCount * 10**(len(key)-2))</p>
+<p>singleWordProb = OneGramDist(‘one-grams.txt’)
+def wordSeqFitness(words):
+return sum(math.log10(singleWordProb(w)) for w in words)</p>
+<p>def memoize(f):
+cache = {}</p>
+<p>def memoizedFunction(<em>args):
+if args not in cache:
+cache[args] = f(</em>args)
+return cache[args]</p>
+<p>memoizedFunction.cache = cache
+return memoizedFunction</p>
+<p><span class="citation">@memoize</span>
+def segment(word):
+if not word: return []
+word = word.lower() # change to lower case
+allSegmentations = [[first] + segment(rest) for (first,rest) in splitPairs(word)]
+return max(allSegmentations, key = wordSeqFitness)</p>
+<p>def splitPairs(word, maxLen=20):
+return [(word[:i+1], word[i+1:]) for i in range(max(len(word), maxLen))]</p>
+<p><span class="citation">@memoize</span>
+def segmentWithProb(word):
+segmented = segment(word)
+return (wordSeqFitness(segmented), segmented)</p>
+<p>def correct_string(string):
+x = string.split()
+correct_string=” ”
+for i in x:
+a=segment(i)
+b=’ ‘.join(a)
+correct_string=correct_string+’ ’+b
+return correct_string</p>
+<p>correct_string(” He is upset because a supervisor was suppose to call him back as well about the password change.”)</p>
+<p>Existing packages
+from textblob import TextBlob
+txt=“He is upset because a supervisor was suppose to call him back as well about the password change.”
+b = TextBlob(txt)
+print(“after spell correction:”+str(b.correct()))</p>
+<p>from autocorrect import Speller</p>
+<p>spell = Speller(lang=‘en’)</p>
+<p>spell(“He is upset because a supervisor was suppose to call him back as well about the password change.”)</p>
+<p>import contextualSpellCheck
+nlp = spacy.load(‘en_core_web_sm’)
+contextualSpellCheck.add_to_pipe(nlp)
+doc = nlp(‘This is my neww job. My firsrt neme is Jack.’)
+print(doc._.outcome_spellCheck)</p>
+<p>2.By context
+import language_tool_python
+tool = language_tool_python.LanguageTool(‘en-US’)
+text = “He is upset because a supervisor was suppose to call him back as well about the password change.”
+tool.correct(text)</p>
+<p>from gramformer import Gramformer
+import torch
+def set_seed(seed):
+torch.manual_seed(seed)
+if torch.cuda.is_available():
+torch.cuda.manual_seed_all(seed)</p>
+<p>set_seed(1212)</p>
+<p>gf = Gramformer(models = 1, use_gpu=False) # 1=corrector, 2=detector</p>
+<p>influent_sentences = [
+“He are moving here.”,
+“He is upset because a supervisor was suppose to call him back as well about the password change.”]</p>
+<p>for influent_sentence in influent_sentences:
+corrected_sentences = gf.correct(influent_sentence, max_candidates=1)
+print(“[Input]”, influent_sentence)
+for corrected_sentence in corrected_sentences:
+print(“[Correction]”,corrected_sentence)
+print(“-” *100)</p>
+<p>Lemmatization
+my_str = dfsource.iloc[16,1]</p>
+<p>doc = nlp(my_str)</p>
+<p>sentences_lemmata_list = [sentence.lemma_ for sentence in nlp(doc).sents]
+print(sentences_lemmata_list)</p>
+<p>Find the subjects
+subj =[tok for tok in doc if ((tok.dep_ == “nsubjpass”) | (tok.dep_ == “nsubj”))]</p>
+</div>
+<div id="textual-cues-tagging" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Textual Cues Tagging<a href="natual-language-processingnlp.html#textual-cues-tagging" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Build a textual cue dictionary
+vlist = DICC.columns.tolist()
+d = {}
+i = 0
+for v in vlist:
+i = i + 1
+d[“V” + str(i)] = clean_cues(DICC,v)</p>
+<p>newkeys = vlist
+vals = list(d.values())
+cuedic = {k: v for k, v in zip(newkeys, vals)}</p>
+<p>Inclusion&amp;Exclusion
+def create_df_name(df_source, role_name, keyword1,keyword2,keyword3,keyword_exclusion,description):
+# depending on the number of word pairs and exclusion rule, they will form the differnt pairs of words to tag the focal tactic.
+# df_source is the list of sentences in the excel to be tagged.
+if keyword2 is None and keyword3 is None:
+df_name = (df_source.loc[(df_source.Role == role_name) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword1),na=False)) &amp;
+(~df_source.Sentences.str.contains(‘|’.join(keyword_exclusion),na=False))
+,[‘InteractionID’,‘Role’,‘Sequence’,‘Sentences’]])
+elif keyword3 is None:
+df_name = (df_source.loc[(df_source.Role == role_name) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword1),na=False)) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword2),na=False)) &amp;
+(~df_source.Sentences.str.contains(‘|’.join(keyword_exclusion),na=False))
+,[‘InteractionID’,‘Role’,‘Sequence’,‘Sentences’]])
+else:
+df_name = (df_source.loc[(df_source.Role == role_name) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword1),na=False)) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword2),na=False)) &amp;
+(df_source.Sentences.str.contains(‘|’.join(keyword3),na=False)) &amp;
+(~df_source.Sentences.str.contains(‘|’.join(keyword_exclusion),na=False))
+,[‘InteractionID’,‘Role’,‘Sequence’,‘Sentences’]])
+df_name.drop_duplicates(subset = (“InteractionID”,“Sequence”),keep=‘first’,inplace=True)
+df_name[‘Type’] = description
+return df_name</p>
+<p>Tag two variables<br />
+def tag_with_cues(data_source, tex_to_tag, variable_name_cues1, variable_name_cues2, checked_cues1, checked_cues2):
+data_source[checked_cues1] = data_source[tex_to_tag].str.contains(‘|’.join(variable_name_cues1),na=False)
+data_source.replace({False: 0, True: 1}, inplace=True)#replace true or false to 1 and 0
+data_source[checked_cues1] = data_source.groupby([‘ID1’, ‘ID2’, ‘ID3’])[checked_cues1].transform(‘max’)#fill the groups with 1 as long as there is a least a 1</p>
+<pre><code>data_source[checked_cues2] = data_source[tex_to_tag].str.contains(&#39;|&#39;.join(variable_name_cues2),na=False)
+data_source.replace({False: 0, True: 1}, inplace=True)#replace true or false to 1 and 0
+data_source[checked_cues2] = data_source.groupby([&#39;ID1&#39;, &#39;ID2&#39;, &#39;ID3&#39;])[checked_cues2].transform(&#39;max&#39;)
+
+return data_source</code></pre>
+<p>Verify the number of obs and groups
+def length_groups(data_to_check):
+obslength = len(data_to_check)
+groupnumbers = data_to_check.groupby([‘ID1’, ‘ID2’, ‘ID3’]).ngroups
+print(“obslength:”,obslength,“;”,“groupnumbers:”,groupnumbers)</p>
+<p>Tag ignoring word order
+re.findall(r’^(?=.<em>permit)(?=.</em>not)(?=.*his).+$’, my_str)</p>
+<p>Random sampling
+def random_sample(data_to_sample, samplesize):
+#generate the distinct combo IDs
+distinctcomboIDs = data_to_sample.groupby([‘ID1’, ‘ID2’, ‘ID3’]).size().reset_index().rename(columns={0:‘count’})
+random.seed(82) #set a seed
+nsample = distinctcomboIDs.sample(n = samplesize)
+extracted_sample = data_to_sample[(data_to_sample[‘ID1’]).isin(nsample[‘ID1’]) &amp;
+(data_tagged_positve[‘ID2’]).isin(nsample[‘ID2’]) &amp;
+(data_tagged_positve[‘ID3’]).isin(nsample[‘ID3’])]<br />
+return extracted_sample</p>
+<p>Simple sampling
+random_sample(df, 100)</p>
+<div id="syntax" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Syntax<a href="natual-language-processingnlp.html#syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>len(text7) #include all the<br />
+len(set(text7)) #unique, not include duplicates
+dfsource = dfsource.applymap(str)</p>
+</div>
+</div>
+<div id="dependency-relations-in-spacy" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Dependency Relations in Spacy<a href="natual-language-processingnlp.html#dependency-relations-in-spacy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>import spacy
+nlp = spacy.load(“en_core_web_sm”)
+sm means small, lg means large, and m…</p>
+<p>Check NLP Pipe Names
+print(nlp.pipe_names)</p>
+<p>Add NLP Pipe
+nlp = spacy.load(‘en_core_web_sm’)
+contextualSpellCheck.add_to_pipe(nlp)</p>
+</div>
+<div id="tag-symbols" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Tag symbols<a href="natual-language-processingnlp.html#tag-symbols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>CC: Coordinating conjunction CD: Cardinal number DT: Determiner EX:
+Existential there FW: Foreign word IN: Preposition or subordinating
+conjunction JJ: Adjective VP: Verb Phrase JJR: Adjective, comparative
+JJS: Adjective, superlative LS: List item marker MD: Modal NN: Noun,
+singular or mass NNS: Noun, plural PP: Preposition Phrase NNP: Proper
+noun, singular Phrase NNPS: Proper noun, plural PDT: Pre determiner POS:
+Possessive ending PRP: Personal pronoun Phrase PRP: Possessive pronoun
+Phrase RB: Adverb RBR: Adverb, comparative RBS: Adverb, superlative RP:
+Particle S: Simple declarative clause SBAR: Clause introduced by a
+(possibly empty) subordinating conjunction SBARQ: Direct question
+introduced by a wh-word or a wh-phrase. SINV: Inverted declarative
+sentence, i.e. one in which the subject follows the tensed verb or
+modal. SQ: Inverted yes/no question, or main clause of a wh-question,
+following the wh-phrase in SBARQ. SYM: Symbol VBD: Verb, past tense VBG:
+Verb, gerund or present participle VBN: Verb, past participle VBP: Verb,
+non-3rd person singular present VBZ: Verb, 3rd person singular present
+WDT: Wh-determiner WP: Wh-pronoun WP: Possessive wh-pronoun WRB:
+Wh-adverb</p>
+<p>Define Doc
+doc = nlp(“Apple is looking at buying U.K. startup for $1 billion”)
+#any sentence</p>
+<p>Check Tokens/Nodes
+for word in doc:
+print(word.orth_)</p>
+<p>Check All the Tags
+for token in doc:
+print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_,
+token.shape_, token.is_alpha, token.is_stop)</p>
+<p>Print the tags in a Pretty Way
+for sent in doc.sents:
+for token in sent:
+print(“{}”.format(token.i, token.text, token.head, token.dep_))</p>
+<p>Build the Dependency Relationship to a Tree
+from nltk import Tree</p>
+<p>def to_nltk_tree(node):
+if node.n_lefts + node.n_rights &gt; 0:
+return Tree(node.orth_, [to_nltk_tree(child) for child in node.children])
+else:
+return node.orth_</p>
+<p>[to_nltk_tree(sent.root).pretty_print() for sent in doc.sents]</p>
+<p>Check the Root Word
+for sent in doc.sents:
+print(sent.root)</p>
+<p>Check the Index of Each Word Token
+for word in doc:
+print(word.orth)</p>
+<p>OR
+for token in doc:
+print((‘{0}’.format(token.lower_)))</p>
+<p>Check the Number of Left Nodes
+for word in doc:
+print(word.n_lefts)</p>
+<p>Check the Right Nodes
+for word in doc:
+print(word.n_rights)</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="networks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/blob/master/index.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

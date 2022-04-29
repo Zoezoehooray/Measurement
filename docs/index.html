@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Text-Analysis-in-Python</title>
+  <meta name="description" content="Text-Analysis-in-Python" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Text-Analysis-in-Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Text-Analysis-in-Python" />
+  
+  
+  
+
+<meta name="author" content="Zoe Li" />
+
+
+<meta name="date" content="2022-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="natual-language-processingnlp.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network-Text-Analysis-in-Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Basic Python Knowledge</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#shortcuts-in-jupyter-notebook"><i class="fa fa-check"></i><b>1.1</b> Shortcuts in Jupyter Notebook</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#make-one-python-script-run-another"><i class="fa fa-check"></i><b>1.2</b> Make one Python script run another</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#concepts"><i class="fa fa-check"></i><b>1.3</b> Concepts</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#install-packages"><i class="fa fa-check"></i><b>1.3.1</b> install packages</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#uninstall-packages"><i class="fa fa-check"></i><b>1.3.2</b> uninstall packages</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#upgrade-packages-the-older-version-is-automatically-replaced-when-you-install-a-newer-version"><i class="fa fa-check"></i><b>1.3.3</b> upgrade packages: the older version is automatically replaced when you install a newer version</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#common-errors"><i class="fa fa-check"></i><b>1.3.4</b> Common Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#open-a-file"><i class="fa fa-check"></i><b>1.4</b> Open a file</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#set-a-path"><i class="fa fa-check"></i><b>1.5</b> Set a path</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#other-symbols"><i class="fa fa-check"></i><b>1.7</b> Other symbols</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#symbols-expressions"><i class="fa fa-check"></i><b>1.8.1</b> Symbols &amp; Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#lambda-function"><i class="fa fa-check"></i><b>1.9</b> Lambda Function</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#general-funtions"><i class="fa fa-check"></i><b>1.10</b> General Funtions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html"><i class="fa fa-check"></i><b>2</b> Natual Language Processing(NLP)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#regexregular-expression"><i class="fa fa-check"></i><b>2.1</b> Regex/Regular Expression</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symbols"><i class="fa fa-check"></i><b>2.1.1</b> Symbols</a></li>
+<li class="chapter" data-level="2.1.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#symple-aplications"><i class="fa fa-check"></i><b>2.1.2</b> Symple aplications</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#online-scraping"><i class="fa fa-check"></i><b>2.2</b> Online Scraping</a></li>
+<li class="chapter" data-level="2.3" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#descriptive-statistics-of-text-data"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics of Text Data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#word-frequencies"><i class="fa fa-check"></i><b>2.3.1</b> Word Frequencies</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#text-data-cleaning"><i class="fa fa-check"></i><b>2.4</b> Text Data Cleaning</a></li>
+<li class="chapter" data-level="2.5" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#textual-cues-tagging"><i class="fa fa-check"></i><b>2.5</b> Textual Cues Tagging</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#syntax"><i class="fa fa-check"></i><b>2.5.1</b> Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#dependency-relations-in-spacy"><i class="fa fa-check"></i><b>2.6</b> Dependency Relations in Spacy</a></li>
+<li class="chapter" data-level="2.7" data-path="natual-language-processingnlp.html"><a href="natual-language-processingnlp.html#tag-symbols"><i class="fa fa-check"></i><b>2.7</b> Tag symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>3</b> Networks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="networks.html"><a href="networks.html#concepts-1"><i class="fa fa-check"></i><b>3.1</b> Concepts</a></li>
+<li class="chapter" data-level="3.2" data-path="networks.html"><a href="networks.html#generate-a-network-graph"><i class="fa fa-check"></i><b>3.2</b> Generate a Network Graph</a></li>
+<li class="chapter" data-level="3.3" data-path="networks.html"><a href="networks.html#send-generated-text-dependency-tree-to-networkx"><i class="fa fa-check"></i><b>3.3</b> Send Generated Text Dependency Tree to NetworkX</a></li>
+<li class="chapter" data-level="3.4" data-path="networks.html"><a href="networks.html#algorithms"><i class="fa fa-check"></i><b>3.4</b> Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parallel-processing.html"><a href="parallel-processing.html"><i class="fa fa-check"></i><b>4</b> Parallel Processing</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="Network-Text-Analysis-in-Python">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Text-Analysis-in-Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Text-Analysis-in-Python</h1>
+<p class="author"><em>Zoe Li</em></p>
+<p class="date"><em>2022-04-28</em></p>
+</div>
+<div id="basic-python-knowledge" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Basic Python Knowledge<a href="index.html#basic-python-knowledge" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>##change work directory</p>
+<p>import os</p>
+<p>os.getcwd()</p>
+<p>os.chdir(“/Users…”)</p>
+<p>Check the version of Python</p>
+<p>from platform import python_version</p>
+<p>print(python_version())</p>
+<div id="shortcuts-in-jupyter-notebook" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Shortcuts in Jupyter Notebook<a href="index.html#shortcuts-in-jupyter-notebook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Source: Note that the shortcuts are for Windows and Linux users. Anyway,
+for the Mac users, they’re different buttons for Ctrl, Shift, and Alt: •
+Ctrl: command key ⌘ • Shift: Shift ⇧ • Alt: option ⌥ First, we need to
+know that they are 2 modes in the Jupyter Notebook App: command mode and
+edit mode. I’ll start with the shortcuts shared between the two modes.
+Shortcuts in both modes: • Shift + Enter run the current cell, select
+below • Ctrl + Enter run selected cells • Alt + Enter run the current
+cell, insert below • Ctrl + S save and checkpoint While in command mode
+(press Esc to activate): • Enter take you into edit mode • H show all
+shortcuts • Up select cell above • Down select cell below • Shift + Up
+extend selected cells above • Shift + Down extend selected cells below •
+A insert cell above • B insert cell below • X cut selected cells • C
+copy selected cells • V paste cells below • Shift + V paste cells above
+• D, D (press the key twice) delete selected cells • Z undo cell
+deletion • S Save and Checkpoint • Y change the cell type to Code • M
+change the cell type to Markdown • P open the command palette. This
+dialog helps you run any command by name. It’s really useful if you
+don’t know some shortcut or when you don’t have a shortcut for the
+wanted command.</p>
+<p>• Shift + Space scroll notebook up • Space scroll notebook down While in
+edit mode (pressEnter to activate) • Esc take you into command mode •
+Tab code completion or indent • Shift + Tab tooltip • Ctrl + ] indent •
+Ctrl + [ dedent • Ctrl + A select all • Ctrl + Z undo • Ctrl + Shift + Z
+or Ctrl + Y redo • Ctrl + Home go to cell start • Ctrl + End go to cell
+end • Ctrl + Left go one word left • Ctrl + Right go one word right •
+Ctrl + Shift + P open the command palette • Down move cursor down • Up
+move cursor up</p>
+</div>
+<div id="make-one-python-script-run-another" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Make one Python script run another<a href="index.html#make-one-python-script-run-another" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Source:
+<a href="https://stackoverflow.com/questions/7974849/how-can-i-make-one-python-file-run-another" class="uri">https://stackoverflow.com/questions/7974849/how-can-i-make-one-python-file-run-another</a>
+There are more than a few ways. I’ll list them in order of inverted
+preference (i.e., best first, worst last): 1. Treat it like a module:
+import file. This is good because it’s secure, fast, and maintainable.
+Code gets reused as it’s supposed to be done. Most Python libraries run
+using multiple methods stretched over lots of files. Highly recommended.
+Note that if your file is called file.py, your import should not include
+the .py extension at the end. 2. The infamous (and unsafe) exec command:
+Insecure, hacky, usually the wrong answer. Avoid where possible. •
+execfile(‘file.py’) in Python 2 • exec(open(‘file.py’).read()) in Python
+3 3. Spawn a shell process: os.system(‘python file.py’). Use when
+desperate. 4. Put this in main.py: 5. #!/usr/bin/python import
+yoursubfile 6. Put this in yoursubfile.py 7. #!/usr/bin/python
+print(“hello”) 8. Run it: python main.py 9. It prints: hello</p>
+</div>
+<div id="concepts" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Concepts<a href="index.html#concepts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>()</strong> - <strong>tuple</strong> A tuple is a sequence of items that can’t be changed
+(immutable).</p>
+<p><strong>[]</strong> - <strong>list</strong> A list is a sequence of items that can be changed
+(mutable).</p>
+<p>convert a list to a string list1 = [‘1’, ‘2’, ‘3’] str1 = ’’.join(list1)</p>
+<p>Or if the list is of integers, convert the elements before joining them.
+list1 = [1, 2, 3] str1 = ’’.join(str(e) for e in list1)</p>
+<p>check if a list contain some string of another list my_list =
+[‘abc-123’, ‘def-456’, ‘ghi-789’, ‘abc-456’, ‘def-111’, ‘qwe-111’] bad =
+[‘abc’, ‘def’]</p>
+<p>[e for e in bad if e in ‘’.join(my_list)] #return item in bad that is
+contained in my_list</p>
+<p>[i for e in bad for i in my_list if e in i] #returns items in my_list
+that contains items in bad</p>
+<p>Convert a list to a string
+list_of_strings = [‘one’, ‘two’, ‘three’]
+my_string = ’’</p>
+<p>for word in list_of_strings:
+my_string += str(word + “,”)</p>
+<p>my_string = my_string[:-1]
+my_string += ‘.’
+print(“Final result:”, my_string)</p>
+<p>Parallel adding items of lists within a list
+def add_lists(outside_lst):
+result_lst = list()
+for j in range(0, len(outside_lst[0])):
+tmp = 0
+for i in range(0, len(outside_lst)):
+tmp = tmp + outside_lst[i][j]
+result_lst.append(tmp)</p>
+<pre><code>return result_lst</code></pre>
+<p><strong>{}</strong> - <strong>dictionary</strong> or set A dictionary is a list of key-value
+pairs, with unique keys (mutable). From Python 2.7/3.1, {} can also
+represent a set of unique values (mutable).</p>
+<p>dist.items()</p>
+<p>dist.values()</p>
+<p>dist.keys()</p>
+<p>change values of a dictionary, x is a list for city, team in
+dic1.items(): for x in list2: if team in x: dic1[city] = x</p>
+<p>String
+Use variables in string regex
+TEXTO = “Var”
+subject = r”Var”</p>
+<p>if re.search(rf”?=){TEXTO}\boundary(?!)“, subject, re.IGNORECASE):
+print(”match”)
+## Packages/Modules</p>
+<div id="install-packages" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> install packages<a href="index.html#install-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>pip install language_tool_python</p>
+<p>Install a specific version
+pip install spacy==2.1.3
+pip install “prettytable&lt;2.0”</p>
+<p>List all packages intalled by pip
+pip list #include editable ones
+pip freeze</p>
+<p>Save the package list to a text file and uninstall all of them
+pip freeze &gt; requirements.txt
+pip uninstall -r requirements.txt</p>
+<p>!python -m spacy download en</p>
+<p>Check the version of pip
+pip –version</p>
+<p>Run Anaconda as an administrator
+conda install <a href="https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz" class="uri">https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz</a> –no-deps</p>
+<p>python -m spacy download en_core_web_sm</p>
+<p>python -m spacy download en</p>
+</div>
+<div id="uninstall-packages" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> uninstall packages<a href="index.html#uninstall-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>pip uninstall spacy</p>
+</div>
+<div id="upgrade-packages-the-older-version-is-automatically-replaced-when-you-install-a-newer-version" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> upgrade packages: the older version is automatically replaced when you install a newer version<a href="index.html#upgrade-packages-the-older-version-is-automatically-replaced-when-you-install-a-newer-version" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>import os</p>
+<p>import pandas as pd</p>
+<p>Pandas represents NaN as a floating point number; similar to none, but
+not equivalent.</p>
+<p>import numpy as np</p>
+<p>Regular expression import re</p>
+<p>from nltk import sent_tokenize from nltk import word_tokenize from nltk
+import pos_tag from nltk import RegexpParser</p>
+<p>import spacy from spacy import displacy from nltk import Tree</p>
+<p>Networks import networkx as nx</p>
+</div>
+<div id="common-errors" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Common Errors<a href="index.html#common-errors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Could not install packages due to an OSError: [WinError 5] Access is denied:
+Solution: add –user
+pip install spacy==2.3.5 –user</p>
+</div>
+</div>
+<div id="open-a-file" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Open a file<a href="index.html#open-a-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>df = pd.read_csv(‘datasets/Admission_Predict.csv’)</p>
+<p>df = pd.read_excel(‘datasets/Admission_Predict.xls’) #or xlsx</p>
+<p>cities = pd.read_html(“wikipedia_data.html”)</p>
+<p>We notice that by default index starts with 0 while the students’ serial
+number starts from 1. If you jump</p>
+<p>back to the CSV output you’ll deduce that pandas has create a new index.
+Instead, we can set the serial NO. as the index if we want to by using
+the index_col.</p>
+<p>df = pd.read_csv(‘datasets/Admission_Predict.csv’, index_col=0)</p>
+<p>read a text file as a table import pandas as pd df =
+pd.read_csv(‘file.txt’, sep=‘’) df.columns =
+[‘Name’,‘Hours’,‘Total Pay’]</p>
+<p>or df = pd.read_csv(“fixtures.txt”, index_col=False, names=columns)</p>
+</div>
+<div id="set-a-path" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Set a path<a href="index.html#set-a-path" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>path = “C:\Users…” dfsource = pd.read_csv(path + “abcd.csv”)</p>
+</div>
+<div id="dataframe" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Dataframe<a href="index.html#dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Build a dataframe d1 = {‘a’: 4, ‘b’: 7, ‘c’:-5, ‘d’:3} d2 =
+pd.Series(d1)</p>
+<p>build a matrix b = np.array([[1,2,3],[4,5,6]]) b 1 2 3 4 5 6 here, the
+dimension means the number of rows, shape means dimensions in R b.ndim
+#2 b.shape #(2, 3)</p>
+<p><strong>Let’s look at the first or last few rows.</strong></p>
+<p>df.head()</p>
+<p>df.tail()</p>
+<p>see column names df.columns</p>
+<p>for col in newdata.columns: print(col)</p>
+<p>see one column df[“gre score”].head()</p>
+<p>see two columns df[[“gre score”,“toefl score”]].head()</p>
+<p>see the table conditional on a column df[df[“gre score”]&gt;320].head()</p>
+<p>Or just see the rows meet some conditions.</p>
+<p>df[df[‘chance of admit’] &gt; 0.7].head()</p>
+<p>see the table conditional on a column (two conditions) &amp; ( ) (df[‘chance
+of admit’] &gt; 0.7) &amp; (df[‘chance of admit’] &lt; 0.9)</p>
+<p>or gt=greater than; lt=lower than df[‘chance of admit’].gt(0.7) &amp;
+df[‘chance of admit’].lt(0.9) df[‘chance of admit’].gt(0.7).lt(0.9)</p>
+<p>check missing values mask=df.isnull() mask.head(10) #missing values gave
+“true”</p>
+<p>drop rows with missing values df.dropna().head(10)</p>
+<p>fill missing values as 0 df.fillna(0, inplace=True)</p>
+<p>sort df = df.set_index(‘time’) #sort by time df = df.sort_index()</p>
+<p>df = df.reset_index() df = df.set_index([‘time’, ‘user’]) #sort by time
+then by user</p>
+<p>sort by a column df.sort_values(“Population”, asending=False,
+inplace=True)</p>
+<p>Find unique values df[‘SUMLEV’].unique()</p>
+<p>max np.max(df[“HAD_CPOX”]) df[‘CitationRatio’].max()</p>
+<p>df.groupby([‘Continent’])[‘% Renewable’].max() #group by</p>
+<p>find the row label which has the max % Renewable answer_one()[‘%
+Renewable’].idxmax()</p>
+<p>df.iloc[df[‘columnX’].argmax()] df.loc[df[‘CitationRatio’] ==
+df[‘CitationRatio’].max()] #get the entire row df[df[‘CitationRatio’] ==
+df[‘CitationRatio’].max()].index.tolist()</p>
+<p>return df[‘Population’].nlargest(3).index.tolist()[2] #return the top 3,
+strings, get the 3rd one</p>
+<p>rowmeans df.mean(axis=1) df[‘mean’] = df.mean(axis=1) #add a column of
+row means</p>
+<p>columnmeans answer_one()[‘Energy Supply per Capita’].mean(axis=0)</p>
+<p>Fill with group means
+df[‘value’] = df.groupby(‘indicator’)[‘value’].transform(‘mean’)</p>
+<p><strong>loc &amp; iloc</strong></p>
+<p>loc is label-based, which means that you have to specify rows and
+columns based on their row and column labels.</p>
+<p>iloc is integer index based, so you have to specify rows and columns by
+their integer index like you did in the previous exercise.</p>
+<p>They are attributes, not methods. so use [ ], not ( ).</p>
+<p>In [ ], the former part is the rows selected, the latter part is the
+columns selected. Here, from the first row to the second last row, the
+columns 0,3,5,6,7,8 are selected. Although the data frame has column
+names…</p>
+<p>cities=cities.iloc[:-1,[0,3,5,6,7,8]]</p>
+<p>data.iloc[:,0]</p>
+<p>data.iloc[:,1] # second column of data frame (last_name)</p>
+<p>data.iloc[:,-1] # last column of data frame (id)</p>
+<p>locate a value by its row label and column label
+newdf[‘2015’].loc[‘United Kingdom’]</p>
+<p><em>Example:</em></p>
+<p>1.School1 is one of the row names df.loc[‘school1’] #will return the row
+of school1 and all of the columns</p>
+<p>2.Name is one of the column names df.loc[‘school1’, ‘Name’] #will return
+the row of school1 and the column of name</p>
+<p>3.Both Michigan and Washtenaw are row names df.loc[‘Michigan’,
+‘Washtenaw County’]</p>
+<p>df.loc[ [(‘Michigan’, ‘Washtenaw County’), (‘Michigan’, ‘Wayne
+County’)]]</p>
+<p>Replace values</p>
+<p>df.replace([1, 3], [100, 300])</p>
+<p>newdata.replace([“Republic of Korea”, “United States of America”,
+“United Kingdom of Great Britain and Northern Ireland”, “China, Hong
+Kong Special Administrative Region”], [“South Korea”, “United States”,
+“United Kingdom”, “Hong Kong”])</p>
+<p>df.replace(to_replace=“.*.html$”, value=“webpage”, regex=True)</p>
+<p>newdata[newdata==“…”]=np.NaN #replace missing data … with NaN values</p>
+<p>Replace values by row and column indecis
+newdf.iloc[188:376, 0:] = 99999</p>
+<p>Replace a value by row index and column name
+df.at[189, column] = “something”</p>
+<p>multiply a column newdata[‘Energy Supply’] = newdata[‘Energy
+Supply’]*1000000</p>
+<p>Convert the Population Estimate series to a string with thousands
+separator (using commas). Use all significant digits (do not round the
+results). df[“Population”] = df[“Population”].map(‘{:,}’.format)</p>
+<p>df[‘new_column_name’] = df[‘column_name’].map(‘{:,.2f}’.format) #two
+digits after the decimal point</p>
+<p>Rename df.rename(columns={‘LOR’: ‘Letter of Recommendation’})
+newdata.columns = [‘Country’, ‘Energy Supply’, ‘Energy Supply per
+Capita’, ‘% Renewable’] #no matter what the old column names are, they
+would be replaced newdata[‘Country’] =
+newdata[‘Country’].str.replace(r’‘,’’) #replace the non-letters of
+values in the column “country”</p>
+<p>newdata[‘Country’] = newdata[‘Country’].str.replace(r’<span class="math inline">\(.*\)</span>‘,’’)
+#replace the part in ( )</p>
+<p>new_df.rename(mapper=str.strip, axis=‘columns’) #delete white spaces of
+column or row names</p>
+<p>change all of the column names to lower case cols = list(df.columns)
+Then a little list comprehenshion cols = [x.lower().strip() for x in
+cols] Then we just overwrite what is already in the .columns attribute
+df.columns=cols</p>
+<p>set the first row as column names new_header = GDP.iloc[0] #grab the
+first row for the header GDP = GDP[1:] #take the data less the header
+row GDP.columns = new_header</p>
+<p><strong>Drop a column</strong></p>
+<p>First, let’s make a copy of a DataFrame using .copy()</p>
+<p>copy_df = df.copy()</p>
+<p>Now lets drop the “Name” column in this copy.</p>
+<p>copy_df.drop(“Name”, inplace=True, axis=1)</p>
+<p>There is a second way to drop a column, and that’s directly through the
+use of the indexing operator, using the del keyword. This way of
+dropping data, however, takes immediate effect on the DataFrame and does
+not return a view.</p>
+<p>del copy_df[‘Class’]</p>
+<p>drop colums 0 and 1(attention: written as 0:2)
+data.drop(data.columns[0:2], axis=1, inplace=True)</p>
+<p>drop rows #cannot written as 0:17
+data.drop(data.index[[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]],
+inplace=True)</p>
+<p>reset index after dropping some rows data.reset_index(drop=True,
+inplace=True)</p>
+<p><strong>Add a column</strong></p>
+<p>df[‘ClassRanking’] = None</p>
+<p><em>Add a new column based on the other one</em> (whether it’s greater than the
+median or not)</p>
+<p>df[‘HighRenew’] = (df[‘% Renewable’] &gt;= df[‘%
+Renewable’].median()).astype(int)</p>
+<p>df[‘HighRenew’] = df[‘% Renewable’].apply(lambda x: 1 if (x &gt;=
+df[‘%Renewable’].median()) else 0) #both works</p>
+<p>Add a column based on the other column and a dictionary</p>
+<p>df[‘Continent’] = df.index.map(ContinentDict) #here ContinentDict is a
+dictionary, df.index can be also a column of df.</p>
+<p>Add n columns
+for n in range(26):
+dfsource[n] = ‘nan’</p>
+<p><strong>Boolean mask</strong></p>
+<p>We can use this to hide the rows with false value with NA, then delete
+rows with NA values</p>
+<p>df.where(admit_mask).head()</p>
+<p>df.where(admit_mask).dropna().head()</p>
+<p>admit_mask=df[‘chance of admit’] &gt; 0.7</p>
+<p><em>Select rows and columns</em></p>
+<p>• df.iloc[[4]] #select row number 4</p>
+<p>• df.iloc[[2, 3, 4]] #select rows 2, 3, and 4</p>
+<p>select = newdata.loc[newdata[‘Country’] == ‘Algeria’] ##a row whose
+country is Algeria print(select)</p>
+<p>get a subset conditional on a column
+df=df[df[‘SUMLEV’] == 50]</p>
+<p>or use filter
+df.groupby([‘ID1’, ‘ID2’, ‘ID3’]).filter(lambda x: len(x[‘any_variable’]) &lt;= 5)</p>
+<p>get a subset conditional on two columns
+data_tagged[(data_tagged.V1 == 1)|(data_tagged.V2 == 1)]</p>
+<p>check the size of a subset
+data_tagged_positve[“V1”] == “some_value”).sum()</p>
+<p>get a subset by column names newdf = df[[‘2006’,‘2007’,
+‘2008’, ‘2009’, ‘2010’, ‘2011’, ‘2012’, ‘2013’, ‘2014’, ‘2015’]]</p>
+<p>or columns_to_keep =
+[‘STNAME’,‘CTYNAME’,‘BIRTHS2010’,‘BIRTHS2011’,‘BIRTHS2012’,‘BIRTHS2013’,
+‘BIRTHS2014’,‘BIRTHS2015’,‘POPESTIMATE2010’,‘POPESTIMATE2011’,
+‘POPESTIMATE2012’,‘POPESTIMATE2013’,‘POPESTIMATE2014’,‘POPESTIMATE2015’]
+df = df[columns_to_keep]</p>
+<p>Remove duplicates
+df.drop_duplicates</p>
+<p>Split the values of one column into two
+pattern=“(?P<First><a href="parallel-processing.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a><em>)(?:.</em> )(?P<Last>[]*$)”</p>
+<p>Now call extract names=df[“President”].str.extract(pattern).head()
+df[“First”]=names[“First”] df[“Last”]=names[“Last”]</p>
+<p>Combine two dataframes (one on top of the other)
+newdf = df.append(df1, ignore_index=True)</p>
+<p>Subset based on another dataframe
+training[~training.CASE_ID.isin(df1.CASE_ID)]</p>
+<p>Plots
+Histagram
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.hist(data_tagged_positvenew.groupby([‘ID1’, ‘ID2’, ‘ID3’]).size(),
+color = ‘blue’, edgecolor = ‘black’,
+bins = int(180/5))</p>
+</div>
+<div id="other-symbols" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Other symbols<a href="index.html#other-symbols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>print(‘Original Article: %s’ % (article))</p>
+<p>for token in doc:
+if token.text != token.lemma_:
+print(‘Original : %s, New: %s’ % (token.text, token.lemma_))</p>
+</div>
+<div id="loops" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Loops<a href="index.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="symbols-expressions" class="section level3 hasAnchor" number="1.8.1">
+<h3><span class="header-section-number">1.8.1</span> Symbols &amp; Expressions<a href="index.html#symbols-expressions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>• When you say: • x |= y ; • …it’s the same as saying: • x = x | y ;
+• …just as: • x +=y ; • …is the same as: • x = x + y ;</p>
+<p>no remainder if number % 2 == 0 #example, number is factorial of 2</p>
+<p>print something for state in df[‘STNAME’].unique(): # We’ll just
+calculate the average using numpy for this particular state avg =
+np.average(df.where(df[‘STNAME’]==state).dropna()[‘CENSUS2010POP’]) #
+And we’ll print it to the screen print(‘Counties in state’ + state + ’
+have an average population of ’ + str(avg))</p>
+</div>
+</div>
+<div id="lambda-function" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Lambda Function<a href="index.html#lambda-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>df.apply(lambda x: np.max(x[rows]), axis=1) df[‘quantity’] =
+df[‘quantity’].apply(lambda x: x*-1)</p>
+<p>my_function = lambda a, b, c : a + b my_function(1, 2, 3) (get 3)</p>
+</div>
+<div id="general-funtions" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> General Funtions<a href="index.html#general-funtions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>def split_title_and_name(person):
+title = person.split()[0]
+lastname = person.split()[-1]
+return ‘{} {}’.format(title, lastname)</p>
+<p>def add_lists(outside_lst):
+result_lst = list()
+for j in range(0, len(outside_lst[0])):
+tmp = 0
+for i in range(0, len(outside_lst)):
+tmp = tmp + outside_lst[i][j]
+result_lst.append(tmp)</p>
+<pre><code>return result_lst</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="natual-language-processingnlp.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Zoezoehooray/Network-Text-Analysis-in-Python/blob/master/index.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
